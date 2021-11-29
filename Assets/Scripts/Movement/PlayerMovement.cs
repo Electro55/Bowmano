@@ -6,7 +6,7 @@ public class PlayerMovement : MonoBehaviour
 {
     public Joystick joystick;
 
-    public float runSpeed;
+    public int runSpeed;
 
     public bool IsMoving
     {

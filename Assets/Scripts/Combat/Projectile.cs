@@ -7,7 +7,7 @@ public class Projectile : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
 
-        if (other.transform.gameObject.tag == "Zmrd")
+        if (other.transform.gameObject.tag == "Enemy")
         {
             Destroy(other.transform.gameObject);
             Destroy(this.transform.gameObject);
