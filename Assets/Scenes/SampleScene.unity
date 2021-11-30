@@ -136,6 +136,8 @@ GameObject:
   - component: {fileID: 74742592}
   - component: {fileID: 74742591}
   - component: {fileID: 74742596}
+  - component: {fileID: 74742593}
+  - component: {fileID: 74742597}
   m_Layer: 6
   m_Name: EnemyLaser
   m_TagString: Enemy
@@ -173,6 +175,21 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!114 &74742593
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 74742590}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 007c188a9578cdd449b8d4650316cb3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealthPoints: 100
+  damage:
+    baseValue: 10
 --- !u!195 &74742594
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -224,6 +241,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   runSpeed: 4
   Radius: 100
+--- !u!114 &74742597
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 74742590}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76e01b31625ffc84ba09640757f3b80a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &123050247
 GameObject:
   m_ObjectHideFlags: 0
@@ -237,6 +266,8 @@ GameObject:
   - component: {fileID: 123050249}
   - component: {fileID: 123050248}
   - component: {fileID: 123050253}
+  - component: {fileID: 123050250}
+  - component: {fileID: 123050254}
   m_Layer: 6
   m_Name: EnemyRanged
   m_TagString: Enemy
@@ -274,6 +305,21 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!114 &123050250
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 123050247}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 007c188a9578cdd449b8d4650316cb3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealthPoints: 100
+  damage:
+    baseValue: 15
 --- !u!195 &123050251
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -325,6 +371,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   runSpeed: 4
   Radius: 8
+--- !u!114 &123050254
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 123050247}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d857e05d60e73c44b961cd7e1222d45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &141997685
 GameObject:
   m_ObjectHideFlags: 0
@@ -1597,6 +1655,8 @@ GameObject:
   - component: {fileID: 1711945963}
   - component: {fileID: 1711945962}
   - component: {fileID: 1711945966}
+  - component: {fileID: 1711945964}
+  - component: {fileID: 1711945967}
   m_Layer: 6
   m_Name: EnemyMelee
   m_TagString: Enemy
@@ -1649,6 +1709,21 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!114 &1711945964
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1711945960}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 007c188a9578cdd449b8d4650316cb3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealthPoints: 100
+  damage:
+    baseValue: 10
 --- !u!195 &1711945965
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1685,6 +1760,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   runSpeed: 4
   Radius: 1
+--- !u!114 &1711945967
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1711945960}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4808408a768f3c04e9d9106d7c8920bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1728569834
 GameObject:
   m_ObjectHideFlags: 0

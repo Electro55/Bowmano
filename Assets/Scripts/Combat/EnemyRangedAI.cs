@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyShootingAI : MonoBehaviour
+public class EnemyRangedAI : MonoBehaviour
 {
 
     void Start()
