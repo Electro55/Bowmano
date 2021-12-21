@@ -21,6 +21,7 @@ public class EnemyMovement : MonoBehaviour
     void Update()
     {
         float distance = Vector3.Distance(target.position, transform.position);
+        agent.isStopped = false;
 
         if (distance > Radius)
         {
@@ -34,7 +35,7 @@ public class EnemyMovement : MonoBehaviour
         }
         else
         {
-
+            agent.isStopped = true;
         }
     }
 
