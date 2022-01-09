@@ -7,6 +7,29 @@ public class CharacterStats : MonoBehaviour
 
     public Stat damage;
 
+    public Stat range = new Stat();
+
+    private void Start()
+    {
+
+        if (transform.gameObject.tag == "Player")
+        {
+            range.SetValue(1000);
+        }
+        if (transform.gameObject.tag == "Melee")
+        {
+            range.SetValue(5);
+        }
+        if (transform.gameObject.tag == "Ranged")
+        {
+            range.SetValue(50);
+        }
+        if (transform.gameObject.tag == "Laser")
+        {
+            range.SetValue(80);
+        }
+    }
+
     private void Awake()
     {
         currentHealthPoints = maxHealthPoints;

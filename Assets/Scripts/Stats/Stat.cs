@@ -14,4 +14,9 @@ public class Stat
     {
         return baseValue;
     }
+
+    public void SetValue(int value)
+    {
+        baseValue = value;
+    }
 }

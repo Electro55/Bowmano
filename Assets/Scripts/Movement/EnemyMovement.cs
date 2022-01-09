@@ -7,15 +7,19 @@ public class EnemyMovement : MonoBehaviour
 {
     public int runSpeed;
 
-    public int Radius;
+    public Stat range;
 
+    CharacterStats characterStats;
     Transform target;
     NavMeshAgent agent;
 
     void Start()
     {
+        characterStats = GetComponent<CharacterStats>();
+        range = characterStats.range;
         target = PlayerManager.instance.player.transform;
         agent = GetComponent<NavMeshAgent>();
+        agent.speed = runSpeed;
     }
 
     void Update()
@@ -23,8 +27,9 @@ public class EnemyMovement : MonoBehaviour
         float distance = Vector3.Distance(target.position, transform.position);
         agent.isStopped = false;
 
-        if (distance > Radius)
+        if (range.GetValue() < distance)
         {
+
             agent.SetDestination(target.position);
 
             if (distance <= agent.stoppingDistance)

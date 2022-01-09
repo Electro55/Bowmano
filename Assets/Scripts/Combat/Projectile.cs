@@ -7,12 +7,12 @@ public class Projectile : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
 
-        if (other.transform.gameObject.tag == "Enemy")
+        if (other.transform.gameObject.layer == LayerMask.NameToLayer("Enemy"))
         {
             Destroy(other.transform.gameObject);
             Destroy(this.transform.gameObject);
         }
-        if (other.transform.gameObject.tag == "Wall")
+        if (other.transform.gameObject.tag == "Wall" || other.transform.gameObject.tag == "Ground")
             Destroy(this.transform.gameObject);
 
 
