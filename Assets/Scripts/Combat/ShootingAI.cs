@@ -24,6 +24,7 @@ public class ShootingAI : MonoBehaviour
     {
         characterStats = GetComponent<CharacterStats>();
         colliders = Physics.OverlapSphere(transform.position, 1000, whatIsEnemy).ToList();
+        colliders = colliders.OrderByDescending(collider => collider != null ? Vector3.Distance(collider.transform.position, transform.position) : int.MaxValue).ToList();
 
         Debug.Log(colliders.Count);
         Debug.Log(characterStats.range.GetValue());

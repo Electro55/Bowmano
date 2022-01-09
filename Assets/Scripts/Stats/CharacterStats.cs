@@ -5,6 +5,8 @@ public class CharacterStats : MonoBehaviour
     public int maxHealthPoints = 100;
     public int currentHealthPoints { get; private set; }
 
+    public ParticleSystem particle;
+
     public Stat damage;
 
     public Stat range = new Stat();
@@ -56,6 +58,7 @@ public class CharacterStats : MonoBehaviour
 
     public virtual void Die()
     {
-        Debug.Log(transform.name + "died");
+        Instantiate(particle, this.transform.position, Quaternion.Euler(new Vector3(0, 90, 0)));
+        Destroy(this.transform.gameObject);
     }
 }

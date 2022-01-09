@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyMeleeAI : MonoBehaviour
 {
-
+    public ParticleSystem particle;
 
     void Start()
     {

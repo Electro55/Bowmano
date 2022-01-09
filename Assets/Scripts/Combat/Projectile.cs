@@ -9,7 +9,7 @@ public class Projectile : MonoBehaviour
 
         if (other.transform.gameObject.layer == LayerMask.NameToLayer("Enemy"))
         {
-            Destroy(other.transform.gameObject);
+            other.transform.gameObject.GetComponent<CharacterStats>().TakeDamage(100);
             Destroy(this.transform.gameObject);
         }
         if (other.transform.gameObject.tag == "Wall" || other.transform.gameObject.tag == "Ground")
