@@ -6,25 +6,49 @@ using UnityEngine.AI;
 public class EnemyRangedAI : MonoBehaviour
 {
 
-    public int Radius;
-    public NavMeshAgent agent;
-    public LayerMask whatIsEnemy;
-    public Transform enemy;
-    public int forceUp, forceForward;
+    public int runSpeed;
 
-    public float timeBetweenAttacks;
-    bool alreadyAttacked;
-    public GameObject projectile;
-    List<Collider> colliders;
+    public Stat range;
+
+    CharacterStats characterStats;
+    Transform target;
+    NavMeshAgent agent;
 
     void Start()
     {
-
+        characterStats = GetComponent<CharacterStats>();
+        range = characterStats.range;
+        target = PlayerManager.instance.player.transform;
+        agent = GetComponent<NavMeshAgent>();
+        agent.speed = runSpeed;
     }
 
-    // Update is called once per frame
     void Update()
     {
+        float distance = Vector3.Distance(target.position, transform.position);
+        agent.isStopped = false;
 
+        if (range.GetValue() < distance)
+        {
+
+            agent.SetDestination(target.position);
+
+            if (distance <= agent.stoppingDistance)
+            {
+                // Attack target
+                FaceTarget();
+            }
+        }
+        else
+        {
+            agent.isStopped = true;
+        }
+    }
+
+    void FaceTarget()
+    {
+        Vector3 direction = (target.position - transform.position).normalized;
+        Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
+        transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 5f);
     }
 }
