@@ -24,10 +24,9 @@ public class ShootingAI : MonoBehaviour
     {
         characterStats = GetComponent<CharacterStats>();
         colliders = Physics.OverlapSphere(transform.position, 1000, whatIsEnemy).ToList();
-        colliders = colliders.OrderByDescending(collider => collider != null ? Vector3.Distance(collider.transform.position, transform.position) : int.MaxValue).ToList();
-
-        Debug.Log(colliders.Count);
-        Debug.Log(characterStats.range.GetValue());
+        colliders = colliders.OrderByDescending(collider => collider != null ?
+                                                Vector3.Distance(collider.transform.position,
+                                                transform.position) : int.MaxValue).ToList();
     }
 
     private void Update()
@@ -35,7 +34,9 @@ public class ShootingAI : MonoBehaviour
         if (!this.transform.gameObject.GetComponent<PlayerMovement>().IsMoving) Attack();
         if (colliders.Count != 0)
         {
-            colliders = colliders.OrderByDescending(collider => collider != null ? Vector3.Distance(collider.transform.position, transform.position) : int.MaxValue).ToList();
+            colliders = colliders.OrderByDescending(collider => collider != null ?
+                                                    Vector3.Distance(collider.transform.position,
+                                                    transform.position) : int.MaxValue).ToList();
         }
 
     }
@@ -47,7 +48,9 @@ public class ShootingAI : MonoBehaviour
         {
             if (colliders.Count != 0 && colliders.Last() != null)
             {
-                Vector3 direction = new Vector3(colliders.Last().transform.position.x, colliders.Last().transform.position.y, colliders.Last().transform.position.x).normalized;
+                Vector3 direction = new Vector3(colliders.Last().transform.position.x,
+                                                colliders.Last().transform.position.y,
+                                                colliders.Last().transform.position.x).normalized;
                 //float targetAngle = Mathf.Atan2(direction.y, direction.y) * Mathf.Rad2Deg;
                 float targetAngle = Mathf.Atan2(direction.y, -direction.x) * Mathf.Rad2Deg;
                 transform.GetChild(0).transform.rotation = Quaternion.Euler(0f, targetAngle, 0f);
@@ -56,7 +59,9 @@ public class ShootingAI : MonoBehaviour
 
                 Vector3 temp = new Vector3(0, 4, 0);
 
-                Rigidbody rb = Instantiate(projectile, transform.position + temp, Quaternion.identity).GetComponent<Rigidbody>();
+                Rigidbody rb = Instantiate(projectile,
+                                transform.position + temp,
+                                Quaternion.identity).GetComponent<Rigidbody>();
                 rb.useGravity = false;
                 rb.AddForce(transform.forward * 2000);
                 alreadyAttacked = true;
