@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
+    public string tag;
+
     private void OnTriggerEnter(Collider other)
     {
 
-        if (other.transform.gameObject.layer == LayerMask.NameToLayer("Enemy"))
+        if (other.transform.gameObject.layer == LayerMask.NameToLayer(tag) && other.transform.gameObject != null)
         {
             other.transform.gameObject.GetComponent<CharacterStats>().TakeDamage(25);
             Destroy(this.transform.gameObject);

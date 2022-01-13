@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 007c188a9578cdd449b8d4650316cb3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealthPoints: 100
+  maxHealthPoints: 50
   particle: {fileID: 1164828570989912804, guid: a235c8dbf6a9526409805a9a5b0ebb73, type: 3}
   damage:
     baseValue: 10
@@ -121,6 +121,8 @@ MonoBehaviour:
   runSpeed: 10
   range:
     baseValue: 0
+  timeBetweenAttacks: 1
+  hitParticles: {fileID: 0}
 --- !u!1 &365454938929793845
 GameObject:
   m_ObjectHideFlags: 0

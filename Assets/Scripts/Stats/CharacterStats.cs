@@ -48,7 +48,6 @@ public class CharacterStats : MonoBehaviour
     public void TakeDamage(int damage)
     {
         currentHealthPoints -= damage;
-        Debug.Log(transform.name + " takes " + damage + "damage");
 
         if (currentHealthPoints <= 0)
         {
