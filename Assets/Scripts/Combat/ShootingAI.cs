@@ -25,7 +25,7 @@ public class ShootingAI : MonoBehaviour
         characterStats = GetComponent<CharacterStats>();
         colliders = Physics.OverlapSphere(transform.position, 1000, whatIsEnemy).ToList();
         colliders = colliders.OrderByDescending(collider => collider != null ?
-                                                Vector3.Distance(collider.transform.position,
+                                                Vector3.Distance(collider.gameObject.transform.position,
                                                 transform.position) : int.MaxValue).ToList();
     }
 
@@ -51,9 +51,6 @@ public class ShootingAI : MonoBehaviour
                 Vector3 direction = new Vector3(colliders.Last().transform.position.x,
                                                 colliders.Last().transform.position.y,
                                                 colliders.Last().transform.position.x).normalized;
-                //float targetAngle = Mathf.Atan2(direction.y, direction.y) * Mathf.Rad2Deg;
-                float targetAngle = Mathf.Atan2(direction.y, -direction.x) * Mathf.Rad2Deg;
-                transform.GetChild(0).transform.rotation = Quaternion.Euler(0f, targetAngle, 0f);
 
                 transform.LookAt(colliders.Last().transform);
 
@@ -61,7 +58,7 @@ public class ShootingAI : MonoBehaviour
 
                 Rigidbody rb = Instantiate(projectile,
                                 transform.position + temp,
-                                Quaternion.identity).GetComponent<Rigidbody>();
+                                this.gameObject.transform.localRotation).GetComponent<Rigidbody>();
                 rb.useGravity = false;
                 rb.AddForce(transform.forward * 2000);
                 alreadyAttacked = true;

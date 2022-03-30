@@ -12,6 +12,7 @@ public class Projectile : MonoBehaviour
         if (other.transform.gameObject.layer == LayerMask.NameToLayer(tag) && other.transform.gameObject != null)
         {
             other.transform.gameObject.GetComponent<CharacterStats>().TakeDamage(25);
+            Debug.Log("NIGGER");
             Destroy(this.transform.gameObject);
         }
         if (other.transform.gameObject.tag == "Wall" || other.transform.gameObject.tag == "Ground")
