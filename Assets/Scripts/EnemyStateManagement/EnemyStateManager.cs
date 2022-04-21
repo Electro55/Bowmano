@@ -55,6 +55,7 @@ public class EnemyStateManager : MonoBehaviour
         var newState = currentState.TryToChangeState();
         if (newState != currentState.EnemyState)
         {
+
             ChangeState(newState);
         }
 
