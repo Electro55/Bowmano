@@ -5,6 +5,8 @@ using UnityEngine.AI;
 
 public class EnemyLaserAI : MonoBehaviour
 {
+
+    PlayerManager player;
     public int runSpeed;
     float distance;
     public Stat range;
@@ -23,7 +25,7 @@ public class EnemyLaserAI : MonoBehaviour
     {
         characterStats = GetComponent<CharacterStats>();
         range = characterStats.range;
-        target = PlayerManager.instance.player.transform;
+        target = player.transform;
         agent = GetComponent<NavMeshAgent>();
         agent.speed = runSpeed;
         lineRenderer = GetComponent<LineRenderer>();

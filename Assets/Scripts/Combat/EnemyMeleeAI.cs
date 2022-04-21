@@ -5,6 +5,7 @@ using UnityEngine.AI;
 
 public class EnemyMeleeAI : MonoBehaviour
 {
+    PlayerManager player;
     public int runSpeed;
     float distance;
     public Stat range;
@@ -22,7 +23,7 @@ public class EnemyMeleeAI : MonoBehaviour
     {
         characterStats = GetComponent<CharacterStats>();
         range = characterStats.range;
-        target = PlayerManager.instance.player.transform;
+        target = player.transform;
         agent = GetComponent<NavMeshAgent>();
         agent.speed = runSpeed;
     }

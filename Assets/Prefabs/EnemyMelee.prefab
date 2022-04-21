@@ -13,7 +13,8 @@ GameObject:
   - component: {fileID: 365454938257749430}
   - component: {fileID: 365454938257749431}
   - component: {fileID: 365454938257749425}
-  - component: {fileID: -6085215947248751017}
+  - component: {fileID: 2069305956914671114}
+  - component: {fileID: -2109079946111110774}
   m_Layer: 6
   m_Name: EnemyMelee
   m_TagString: Melee
@@ -29,7 +30,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 365454938257749429}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 18.56, y: 0.51, z: 10.98}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 365454938929793844}
@@ -107,7 +108,7 @@ MonoBehaviour:
     baseValue: 10
   range:
     baseValue: 0
---- !u!114 &-6085215947248751017
+--- !u!114 &2069305956914671114
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -116,14 +117,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 365454938257749429}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4808408a768f3c04e9d9106d7c8920bf, type: 3}
+  m_Script: {fileID: 11500000, guid: 4bae297ca4b169246ad500e9036706d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  runSpeed: 10
-  range:
-    baseValue: 0
-  timeBetweenAttacks: 1
-  hitParticles: {fileID: 0}
+  defaultState: 0
+--- !u!114 &-2109079946111110774
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 365454938257749429}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0af51f395bb60ef48b1340d206775ff0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  faction: 1
+  attackRange: 0
 --- !u!1 &365454938929793845
 GameObject:
   m_ObjectHideFlags: 0
@@ -296,6 +307,10 @@ PrefabInstance:
     - target: {fileID: 6976549806407151586, guid: 69490aae08dd35e458d33db4aa7f3d84, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8152742478998324550, guid: 69490aae08dd35e458d33db4aa7f3d84, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8815819371500007884, guid: 69490aae08dd35e458d33db4aa7f3d84, type: 3}
       propertyPath: m_Name

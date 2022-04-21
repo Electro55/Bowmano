@@ -97,6 +97,7 @@ GameObject:
   - component: {fileID: 5924661138789114397}
   - component: {fileID: 5924661138789114398}
   - component: {fileID: 5924661138789114368}
+  - component: {fileID: 1728569842}
   m_Layer: 7
   m_Name: Player
   m_TagString: Player
@@ -169,13 +170,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   agent: {fileID: 5924661138789114369}
-  whatIsEnemy:
-    serializedVersion: 2
-    m_Bits: 64
-  enemy: {fileID: 0}
-  forceForward: 2000
   timeBetweenAttacks: 0.6
-  projectile: {fileID: 6989570316632861897, guid: e8229ec7463147d41bf0edc6382f0b4f, type: 3}
+  projectile: {fileID: 6617060947464072582, guid: e8229ec7463147d41bf0edc6382f0b4f, type: 3}
 --- !u!54 &5924661138789114397
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -224,6 +220,19 @@ MonoBehaviour:
     baseValue: 10
   range:
     baseValue: 0
+--- !u!114 &1728569842
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5924661138789114395}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 890203e30fe2fae4f8c44227510616f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  faction: 0
 --- !u!1001 &1014469280906388716
 PrefabInstance:
   m_ObjectHideFlags: 0

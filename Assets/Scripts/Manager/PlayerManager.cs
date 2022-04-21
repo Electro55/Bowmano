@@ -1,19 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
-public class PlayerManager : MonoBehaviour
+public class PlayerManager : Unit
 {
-    #region Singleton
+    private NavMeshAgent agent;
 
-    public static PlayerManager instance;
+    public NavMeshAgent Agent => agent;
 
-    private void Awake()
+    protected override void Start()
     {
-        instance = this;
+        base.Start();
+        agent = GetComponent<NavMeshAgent>();
     }
-
-    #endregion
-
-    public GameObject player;
 }

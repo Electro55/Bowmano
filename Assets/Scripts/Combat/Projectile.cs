@@ -4,20 +4,35 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
+    private Faction faction;
+
+    public Faction Faction
+    {
+        get { return faction; }
+        set { faction = value; }
+    }
+
+    private int damage = 50;
+    public int Damage
+    {
+        get { return damage; }
+        set { damage = value; }
+    }
+
     public string tag;
 
-    private void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter(Collision collision)
     {
-
-        if (other.transform.gameObject.layer == LayerMask.NameToLayer(tag) && other.transform.gameObject != null)
+        var unit = collision.collider.GetComponent<Unit>();
+        if (unit)
         {
-            other.transform.gameObject.GetComponent<CharacterStats>().TakeDamage(25);
-            Debug.Log("NIGGER");
-            Destroy(this.transform.gameObject);
+            if (unit.Faction != faction)
+            {
+                unit.DealDamage(this);
+                Destroy(gameObject);
+            }
         }
-        if (other.transform.gameObject.tag == "Wall" || other.transform.gameObject.tag == "Ground")
-            Destroy(this.transform.gameObject);
-
-
+        if (collision.transform.gameObject.tag == "Wall")
+            Destroy(gameObject);
     }
 }

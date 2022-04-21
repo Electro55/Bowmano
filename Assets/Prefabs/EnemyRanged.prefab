@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 9210783107979764457}
   - component: {fileID: 9210783107979764459}
   - component: {fileID: -4068428362513915160}
+  - component: {fileID: 8854970043928339811}
   m_Layer: 6
   m_Name: EnemyRanged
   m_TagString: Ranged
@@ -124,6 +125,19 @@ MonoBehaviour:
     baseValue: 0
   timeBetweenAttacks: 1.5
   projectile: {fileID: 3007362662475882260, guid: 9457f9ea2d4e85d47b97704ee88bbc2a, type: 3}
+--- !u!114 &8854970043928339811
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9210783107979764454}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bae297ca4b169246ad500e9036706d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultState: 0
 --- !u!1 &9210783108105516698
 GameObject:
   m_ObjectHideFlags: 0
