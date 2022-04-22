@@ -18,7 +18,7 @@ public class LevelLoader : GameSingleton<LevelLoader>
 
     public void LoadLevel(int index)
     {
-        SceneManager.LoadScene(currentLevel+1);
+        SceneManager.LoadScene(currentLevel + 1);
     }
 
     public void LoadMenu()
@@ -30,8 +30,10 @@ public class LevelLoader : GameSingleton<LevelLoader>
     public void LoadNextLevel()
     {
         currentLevel++;
-        if(currentLevel <= levels)
+        if (currentLevel < levels)
             LoadLevel(currentLevel);
+        else
+            LoadMenu();
     }
 
 

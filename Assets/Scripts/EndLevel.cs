@@ -9,7 +9,7 @@ public class EndLevel : MonoBehaviour
     bool shouldOpen;
     BoxCollider gate;
 
-    public 
+    public
 
     // Start is called before the first frame update
     void Start()
@@ -17,7 +17,7 @@ public class EndLevel : MonoBehaviour
         gate = GetComponentInChildren<BoxCollider>(true);
         gate.isTrigger = false;
         gate.enabled = true;
-        if(shouldOpen)
+        if (shouldOpen)
             EnemyCounter.Instance.EnemyRemoved += OnEnemyRemoved;
 
     }

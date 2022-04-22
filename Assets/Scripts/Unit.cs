@@ -32,7 +32,11 @@ public class Unit : MonoBehaviour
             HpChanged?.Invoke(this);
         }
     }
-    public int MaxHp => maxHp;
+    public int MaxHp
+    {
+        get { return maxHp; }
+        set { maxHp = value; }
+    }
 
     public void IncreaseMaxHp(float mult)
     {

@@ -12,6 +12,7 @@ public class PlayerManager : Unit
     protected override void Start()
     {
         base.Start();
+        base.MaxHp = 1000;
         agent = GetComponent<NavMeshAgent>();
         IncreaseMaxHp(StatsManager.Instance.HP.FinalMult);
     }

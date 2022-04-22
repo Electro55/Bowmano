@@ -13,6 +13,9 @@ public class Enemy : Unit
     public NavMeshAgent Agent => agent;
 
     [SerializeField]
+    private int bossHP;
+
+    [SerializeField]
     private float attackRange;
     public float AttackRange => attackRange;
 
@@ -23,6 +26,7 @@ public class Enemy : Unit
     protected override void Start()
     {
         base.Start();
+        base.MaxHp = base.MaxHp + bossHP;
         agent = GetComponent<NavMeshAgent>();
         player = GameObject.FindObjectOfType<PlayerManager>();
         animator = GetComponentInChildren<Animator>();
