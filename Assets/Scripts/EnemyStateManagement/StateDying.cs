@@ -15,7 +15,7 @@ public class StateDying : State
         base.InitState(player, enemy);
         enemy.Agent.isStopped = true;
         enemy.Animator.SetTrigger("Died");
-        EnemyCounter.Instance.enemies.Remove(this.gameObject.GetComponent<Enemy>());
+        EnemyCounter.Instance.RemoveEnemy(this.gameObject.GetComponent<Enemy>());
         Destroy(gameObject, 2f);
         enemy.GetComponentInChildren<Collider>().enabled = false;
     }

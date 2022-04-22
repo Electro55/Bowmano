@@ -6,23 +6,29 @@ using UnityEngine.SceneManagement;
 public class EndLevel : MonoBehaviour
 {
     [SerializeField]
-    GameObject gate;
+    bool shouldOpen;
+    BoxCollider gate;
 
-    [SerializeField]
-    GameObject player;
-
+    public 
 
     // Start is called before the first frame update
     void Start()
     {
+        gate = GetComponentInChildren<BoxCollider>(true);
+        gate.isTrigger = false;
+        gate.enabled = true;
+        if(shouldOpen)
+            EnemyCounter.Instance.EnemyRemoved += OnEnemyRemoved;
+
     }
 
     // Update is called once per frame
-    void Update()
+    void OnEnemyRemoved()
     {
         if (EnemyCounter.Instance.enemies.Count == 0)
         {
-            gate.GetComponent<BoxCollider>().enabled = true;
+            gate.isTrigger = true;
+            GetComponent<MeshRenderer>().material.color = Color.green;
         }
     }
 
@@ -30,7 +36,7 @@ public class EndLevel : MonoBehaviour
     {
         if (collider.transform.tag == "Player")
         {
-            SceneManager.LoadScene("SecondLevel");
+            LevelLoader.Instance.LoadNextLevel();
         }
     }
 }

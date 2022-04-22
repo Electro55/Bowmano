@@ -13,5 +13,6 @@ public class PlayerManager : Unit
     {
         base.Start();
         agent = GetComponent<NavMeshAgent>();
+        IncreaseMaxHp(StatsManager.Instance.HP.FinalMult);
     }
 }

@@ -16,6 +16,9 @@ public class Enemy : Unit
     private float attackRange;
     public float AttackRange => attackRange;
 
+    [SerializeField]
+    private MonsterType monsterType;
+
     // Start is called before the first frame update
     protected override void Start()
     {
@@ -38,6 +41,8 @@ public class Enemy : Unit
         if (stateManager)
         {
             stateManager.ChangeState(EnemyState.Dying);
+            MonsterCounter.Instance.AddMonster(monsterType);
+            StatsManager.Instance.Money += 10;
         }
         //SkillManager.Instance.AddXp(10);
     }

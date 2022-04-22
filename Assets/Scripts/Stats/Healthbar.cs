@@ -7,17 +7,17 @@ public class Healthbar : MonoBehaviour
 {
     public Image image;
 
-    public CharacterStats player;
+    private Unit unit;
 
     void Start()
     {
-        player = this.GetComponentInParent<CharacterStats>();
+        unit = this.GetComponentInParent<Unit>();
     }
 
     void Update()
     {
-        if (player.currentHealthPoints > 0)
-            image.fillAmount = ((float)player.currentHealthPoints / player.maxHealthPoints);
+        if (unit && unit.Hp > 0)
+            image.fillAmount = ((float)unit.Hp / unit.MaxHp);
         else
             image.fillAmount = 0;
     }

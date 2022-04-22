@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
-    private Faction faction;
+     [SerializeField]
+    private Faction faction = Faction.Friendly;
 
     public Faction Faction
     {
@@ -19,7 +20,6 @@ public class Projectile : MonoBehaviour
         set { damage = value; }
     }
 
-    public string tag;
 
     private void OnCollisionEnter(Collision collision)
     {

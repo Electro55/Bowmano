@@ -38,7 +38,7 @@ public class EnemyStateManager : MonoBehaviour
             currentState.enabled = true;
         }
         currentState.InitState(player, enemy);
-        Debug.Log(currentState);
+        //Debug.Log(currentState);
     }
 
     // Start is called before the first frame update

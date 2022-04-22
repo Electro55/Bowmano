@@ -5,10 +5,13 @@ using UnityEngine;
 public class StateAttacking : State
 {
     private float currentPlayerDist;
+    private Attack attack;
+
 
     private void Awake()
     {
         EnemyState = EnemyState.Attacking;
+        attack = GetComponent<Attack>();
     }
 
     public override void InitState(PlayerManager player, Enemy enemy)
@@ -19,9 +22,9 @@ public class StateAttacking : State
 
     public override void Act()
     {
-        Debug.Log(currentPlayerDist);
+        //Debug.Log(currentPlayerDist);
         enemy.Animator.SetFloat("PlayerRange", currentPlayerDist);
-
+        attack?.PerformAttack(player, enemy);
     }
 
     public override EnemyState TryToChangeState()

@@ -58,7 +58,7 @@ public class CharacterStats : MonoBehaviour
     public virtual void Die()
     {
         Instantiate(particle, this.transform.position, Quaternion.Euler(new Vector3(0, 90, 0)));
-        EnemyCounter.Instance.enemies.Remove(this.gameObject.GetComponent<Enemy>());
+        EnemyCounter.Instance.RemoveEnemy(this.gameObject.GetComponent<Enemy>());
         Destroy(this.transform.gameObject);
     }
 }

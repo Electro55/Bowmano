@@ -23,11 +23,12 @@ public class ShootingAI : MonoBehaviour
     private void Start()
     {
         enemies = EnemyCounter.Instance.enemies;
+        timeBetweenAttacks *= (2 - StatsManager.Instance.AttackSpeed.FinalMult);
     }
 
     private void Update()
     {
-        print(enemies.Count);
+        //print(enemies.Count);
         if (!this.transform.gameObject.GetComponent<PlayerMovement>().IsMoving && enemies.Count > 0)
             Attack();
     }
@@ -40,10 +41,11 @@ public class ShootingAI : MonoBehaviour
             Vector3 temp = new Vector3(0, 4, 0);
 
             transform.LookAt(target.transform.localPosition - temp);
-
-            Rigidbody rb = Instantiate(projectile,
+            var proj = Instantiate(projectile,
                             transform.position + temp,
-                            this.gameObject.transform.localRotation).GetComponent<Rigidbody>();
+                            this.gameObject.transform.localRotation);
+            proj.Damage = (int)(proj.Damage * StatsManager.Instance.Damage.FinalMult);
+            Rigidbody rb = proj.GetComponent<Rigidbody>();
             rb.useGravity = false;
             rb.AddForce(transform.forward * 20, ForceMode.Impulse);
             alreadyAttacked = true;

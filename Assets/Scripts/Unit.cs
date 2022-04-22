@@ -9,6 +9,10 @@ public class Unit : MonoBehaviour
     public event Action<Unit> Died;
 
     [SerializeField]
+    protected int baseDamage = 10;
+    protected int BaseDamage => baseDamage;
+
+    [SerializeField]
     private Faction faction;
 
     public Faction Faction
@@ -30,6 +34,12 @@ public class Unit : MonoBehaviour
     }
     public int MaxHp => maxHp;
 
+    public void IncreaseMaxHp(float mult)
+    {
+        maxHp = (int)(maxHp * mult);
+        Hp = MaxHp;
+    }
+
     //private Weapon weapon;
 
     protected virtual void Start()
@@ -40,6 +50,15 @@ public class Unit : MonoBehaviour
     public void DealDamage(Projectile projectile)
     {
         Hp -= projectile.Damage;
+        if (Hp <= 0)
+        {
+            Died?.Invoke(this);
+        }
+    }
+
+    public void DealDamage(Unit dealingDamage)
+    {
+        Hp -= dealingDamage.BaseDamage;
         if (Hp <= 0)
         {
             Died?.Invoke(this);
