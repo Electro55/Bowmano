@@ -852,6 +852,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Gate
       objectReference: {fileID: 0}
+    - target: {fileID: 3641033088667671793, guid: a2171cdd4d6b030459b5f42fa814a43e, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     - target: {fileID: 6823516952480038888, guid: a2171cdd4d6b030459b5f42fa814a43e, type: 3}
       propertyPath: m_Center.x
       value: 37
@@ -1199,6 +1203,10 @@ PrefabInstance:
     - target: {fileID: 3641033088667671793, guid: a2171cdd4d6b030459b5f42fa814a43e, type: 3}
       propertyPath: m_Name
       value: Gate (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3641033088667671793, guid: a2171cdd4d6b030459b5f42fa814a43e, type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 6823516952480038888, guid: a2171cdd4d6b030459b5f42fa814a43e, type: 3}
       propertyPath: m_Center.x

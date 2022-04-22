@@ -122,7 +122,7 @@ NavMeshAgent:
   m_AutoRepath: 1
   m_Height: 1
   m_BaseOffset: 0
-  m_WalkableMask: 4294967295
+  m_WalkableMask: 1
   m_ObstacleAvoidanceType: 4
 --- !u!114 &4453567654619021863
 MonoBehaviour:
@@ -136,7 +136,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0af51f395bb60ef48b1340d206775ff0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  baseDamage: 10
   faction: 1
+  bossHP: 0
   attackRange: 10
   monsterType: 0
 --- !u!114 &7345068084773393380
